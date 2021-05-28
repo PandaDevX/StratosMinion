@@ -95,6 +95,33 @@ public class Minion implements InventoryHolder {
         MinionManager.minions.add(this);
     }
 
+    public Minion(Location location, MinionType type, OfflinePlayer spawner,  int efficiency, int fortune, int fuel, long fuelRemovalStamp) {
+        this.owner = spawner;
+        this.type = type;
+        as = location.getWorld().spawn(location, ArmorStand.class);
+        as.setSmall(true);
+        as.setCustomName(type.getOption().getName());
+        as.setCustomNameVisible(true);
+        as.setVisible(true);
+        as.setGravity(true);
+        as.setArms(true);
+        as.getEquipment().setChestplate(type.getOption().getEquipment().getChest());
+        as.getEquipment().setItemInMainHand(type.getOption().getEquipment().getHand());
+        as.getEquipment().setHelmet(type.getOption().getEquipment().getSkull());
+        as.getEquipment().setLeggings(type.getOption().getEquipment().getLeggings());
+        as.getEquipment().setBoots(type.getOption().getEquipment().getBoots());
+        as.setBasePlate(false);
+        this.fuel = fuel;
+        if(fuelRemovalStamp == 0) {
+            setFuelRemovalStamp(5);
+        } else {
+            setTrueRemovalStamp(fuelRemovalStamp);
+        }
+        setAttribute(MinionAttribute.EFFICIENCY, efficiency);
+        setAttribute(MinionAttribute.FORTUNE, fortune);
+        MinionManager.minions.add(this);
+    }
+
     public void kill() {
         if(as.getEquipment() == null) return;
         as.getEquipment().clear();
@@ -384,6 +411,11 @@ public class Minion implements InventoryHolder {
             break;
         }
         player.updateInventory();
+    }
+
+    @Override
+    public int hashCode() {
+        return as.getEntityId();
     }
 
     @NotNull

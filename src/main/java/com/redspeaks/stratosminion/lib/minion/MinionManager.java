@@ -52,7 +52,7 @@ public class MinionManager {
         return new Minion(location, MinionType.parse(itemStack.getItemMeta().getDisplayName()),spawner,
                 Integer.parseInt(ChatUtil.strip(itemStack.getItemMeta().getLore().stream().filter(i -> !i.equals(" ")).filter(i -> ChatUtil.strip(i).contains("Efficiency")).findAny().get().split(" ")[3])),
                 Integer.parseInt(ChatUtil.strip(itemStack.getItemMeta().getLore().stream().filter(i -> !i.equals(" ")).filter(i -> ChatUtil.strip(i).contains("Fortune")).findAny().get().split(" ")[3])),
-                Integer.parseInt(ChatUtil.strip(itemStack.getItemMeta().getLore().stream().filter(i -> !i.equals(" ")).filter(i -> ChatUtil.strip(i).contains("Fuel")).findAny().get().split(" ")[3])));
+                Integer.parseInt(ChatUtil.strip(itemStack.getItemMeta().getLore().stream().filter(i -> !i.equals(" ")).filter(i -> ChatUtil.strip(i).contains("Fuel")).findAny().get().split(" ")[3])), 0);
     }
 
     public static Minion spawnMinion(Location location, MinionType type, OfflinePlayer spawner) {
@@ -68,8 +68,7 @@ public class MinionManager {
     }
 
     public static Minion spawnMinion(Location location, MinionType type, OfflinePlayer spawner, int efficiency, int fortune, int fuel, int token, long stamp) {
-        Minion minion =  new Minion(location, type, spawner, efficiency, fortune, fuel);
-        minion.setTrueRemovalStamp(stamp);
+        Minion minion =  new Minion(location, type, spawner, efficiency, fortune, fuel, stamp);
         minion.setToken(token);
         return minion;
     }

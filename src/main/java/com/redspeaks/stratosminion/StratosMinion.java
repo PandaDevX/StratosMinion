@@ -91,11 +91,10 @@ public final class StratosMinion extends JavaPlugin {
                 public void run() {
                     for(Minion m : MinionManager.getMinions()) {
                         if (m.emptyFuel()) {
-                            return;
+                            continue;
                         }
                         if(m.getFuelRemovalStamp() <= System.currentTimeMillis()) {
                             m.setFuel(m.getFuel() - 1);
-                            m.setFuelRemovalStamp(5);
                         }
                         boolean goingUp = booleanHashMap.getOrDefault(m.getArmorStand().getUniqueId().toString(), false);
                         if (m.getArmorStand().getRightArmPose().getX() >= 5.2) {
