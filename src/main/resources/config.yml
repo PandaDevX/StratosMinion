@@ -1,0 +1,89 @@
+# Color
+# https://hub.spigotmc.org/javadocs/spigot/org/bukkit/DyeColor.html
+# RGB
+# https://www.w3schools.com/colors/colors_rgb.asp
+# Materials
+# https://hub.spigotmc.org/javadocs/bukkit/org/bukkit/Material.html
+Minion Type:
+   iron:
+      name: '&6Iron Minion'
+      rgb: true
+      starting_price: 2
+      equipment:
+         leggings:
+           color: '91, 127, 137'
+         boots:
+           color: '91, 127, 137'
+         chestplate:
+           color: '91, 127, 137'
+         hand: 'DIAMOND_PICKAXE'
+         head: 'https://minecraft-heads.com/player-heads/alphabet/5076-question-mark'
+   coal:
+      name: '&6Coal Minion'
+      rgb: true
+      starting_price: 2
+      equipment:
+         leggings:
+           color: '91, 127, 137'
+         boots:
+           color: '91, 127, 137'
+         chestplate:
+           color: '91, 127, 137'
+         hand: 'DIAMOND_PICKAXE'
+         head: 'RedSpeaks'
+   gold:
+      name: '&6Gold Minion'
+      rgb: true
+      starting_price: 2
+      equipment:
+         leggings:
+           color: '91, 127, 137'
+         boots:
+           color: '91, 127, 137'
+         chestplate:
+           color: '91, 127, 137'
+         hand: 'DIAMOND_PICKAXE'
+         head: 'eyJ0ZXh0dXJlcyI6eyJTS0lOIjp7InVybCI6Imh0dHA6Ly90ZXh0dXJlcy5taW5lY3JhZnQubmV0L3RleHR1cmUvOGI4YTk5Y2JlOThmMDljODc0MTdhYmQ0ZWMxMmY3NzlhNTJkODMzMTRmYzQ3NGJlNTA3ZDQyMDU3MzM2NmJhNyJ9fX0='
+   diamond:
+      name: '&6Diamond Minion'
+      rgb: true
+      starting_price: 2
+      equipment:
+         leggings:
+           color: '91, 127, 137'
+         boots:
+           color: '91, 127, 137'
+         chestplate:
+           color: '91, 127, 137'
+         hand: 'DIAMOND_PICKAXE'
+         head: 'https://minecraft-heads.com/player-heads/alphabet/5076-question-mark'
+   emerald:
+      name: '&6Emerald Minion'
+      rgb: true
+      starting_price: 2
+      equipment:
+         leggings:
+           color: '91, 127, 137'
+         boots:
+           color: '91, 127, 137'
+         chestplate:
+           color: '91, 127, 137'
+         hand: 'DIAMOND_PICKAXE'
+         head: 'https://minecraft-heads.com/player-heads/alphabet/5076-question-mark'
+   stratos:
+      name: '&6Stratos Minion'
+      rgb: true
+      starting_price: 2
+      equipment:
+         leggings:
+           color: '91, 127, 137'
+         boots:
+           color: '91, 127, 137'
+         chestplate:
+           color: '91, 127, 137'
+         hand: 'DIAMOND_PICKAXE'
+         head: 'https://minecraft-heads.com/player-heads/alphabet/5076-question-mark'
+
+starting-costs:
+   fortune: 3
+   efficiency: 3

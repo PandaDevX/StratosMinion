@@ -1,0 +1,8 @@
+name: StratosMinion
+version: ${project.version}
+main: com.redspeaks.stratosminion.StratosMinion
+api-version: 1.16
+depend: [RevEnchants]
+commands:
+  minion:
+    description: main command to spawn a minion
