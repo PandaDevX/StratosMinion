@@ -23,7 +23,7 @@ public class ChatUtil {
     }
 
     public static String serializeLocation(Location location) {
-        return location.getWorld().getName() + (int)location.getX() + (int)location.getY() + (int)location.getZ();
+        return location.getWorld().getName() + location.getX() + location.getY() + location.getZ();
     }
 
     public static boolean isInt(String text) {

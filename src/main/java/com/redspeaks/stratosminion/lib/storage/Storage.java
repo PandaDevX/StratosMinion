@@ -20,6 +20,7 @@ public class Storage {
             plugin.getDataFolder().mkdir();
         }
         file = new File(plugin.getDataFolder(), "data.yml");
+
         if(!file.exists()) {
             try {
                 file.createNewFile();

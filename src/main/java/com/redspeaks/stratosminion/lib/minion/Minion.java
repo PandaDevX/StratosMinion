@@ -123,8 +123,11 @@ public class Minion implements InventoryHolder {
     }
 
     public void kill() {
-        if(as.getEquipment() == null) return;
-        as.getEquipment().clear();
+
+        Storage.prohibitedBlocks.remove(ChatUtil.serializeLocation(getRelativeLocation()));
+        if(as.getEquipment()!= null) {
+            as.getEquipment().clear();
+        }
         as.remove();
     }
 
@@ -139,6 +142,9 @@ public class Minion implements InventoryHolder {
     public void startMining() {
         as.setRightArmPose(new EulerAngle(4, 0, 0));
         setTimeStamp(3);
+        as.getWorld().playEffect(as.getLocation(), Effect.PORTAL_TRAVEL, 10, 10);
+        Storage.prohibitedBlocks.add(ChatUtil.serializeLocation(getRelativeLocation()));
+        System.out.println("adding " + ChatUtil.serializeLocation(getRelativeLocation()));
     }
 
     public Long getFuelRemovalStamp() {

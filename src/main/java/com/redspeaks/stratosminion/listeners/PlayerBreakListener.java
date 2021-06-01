@@ -9,10 +9,10 @@ import org.bukkit.event.block.BlockBreakEvent;
 
 public class PlayerBreakListener implements Listener {
 
-    @EventHandler(priority = EventPriority.LOWEST)
+    @EventHandler(priority = EventPriority.LOWEST, ignoreCancelled = true)
     public void onBreak(BlockBreakEvent e) {
-         if(Storage.prohibitedBlocks.contains(ChatUtil.serializeLocation(e.getBlock().getLocation()))) {
-             e.setCancelled(true);
-         }
+        if(Storage.prohibitedBlocks.contains(ChatUtil.serializeLocation(e.getBlock().getLocation().clone().add(0.5, 0, 0.5)))) {
+            e.setCancelled(true);
+        }
     }
 }
